@@ -24,6 +24,16 @@
 
 > AI-powered crop intelligence for farmers, agronomists, and field managers — combining image analysis, weather insights, geospatial diagnostics, and evidence-backed agronomic guidance in one workflow.
 
+<p align="center">
+  <a href="C:/Users/MCT/Downloads/Prithvi_Agro_AI_paper.pdf">
+    <img src="https://img.shields.io/badge/📄_Research_Paper-View_PDF-0EA5E9?style=for-the-badge&logo=adobeacrobatreader&logoColor=white" alt="Read the research paper" />
+  </a>
+</p>
+
+<p align="center">
+  <strong>This project is grounded in a research-backed agricultural AI study and has been designed around a well-structured, evidence-driven crop intelligence framework.</strong>
+</p>
+
 ## Overview
 
 Prithvi Agro Crop Assistant is a research-oriented agricultural decision support system that helps interpret crop stress, field conditions, and management risks using multiple evidence sources. The system can accept a natural language query, a plant image, and optional geolocation details, then orchestrate a multi-step reasoning workflow to provide actionable agronomic advice.
