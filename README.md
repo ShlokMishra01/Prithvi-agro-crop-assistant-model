@@ -1,124 +1,307 @@
-# AgriBot Field Advisor
+# 🌱 Prithvi Agro Crop Assistant
 
-> A research-oriented decision-support prototype for connecting crop observations with weather, satellite, image, and agricultural reference data.
+<p align="center">
+  <img src="https://raw.githubusercontent.com/ShlokMishra01/Prithvi-agro-crop-assistant-model/main/.github/assets/hero-banner.png" alt="AgriBot banner" width="1200" />
+</p>
 
-[![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
-[![Streamlit](https://img.shields.io/badge/UI-Streamlit-FF4B4B?logo=streamlit&logoColor=white)](https://streamlit.io/)
-[![LangGraph](https://img.shields.io/badge/Orchestration-LangGraph-1C3C3C)](https://langchain-ai.github.io/langgraph/)
+<p align="center">
+  <a href="https://www.python.org/">
+    <img alt="Python 3.10+" src="https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white" />
+  </a>
+  <a href="https://streamlit.io/">
+    <img alt="Streamlit" src="https://img.shields.io/badge/UI-Streamlit-FF4B4B?logo=streamlit&logoColor=white" />
+  </a>
+  <a href="https://langchain-ai.github.io/langgraph/">
+    <img alt="LangGraph" src="https://img.shields.io/badge/Orchestration-LangGraph-1C3C3C" />
+  </a>
+  <a href="https://www.sentinel-hub.com/">
+    <img alt="Sentinel Hub" src="https://img.shields.io/badge/Data-Sentinel%20Hub-2E7D32" />
+  </a>
+  <a href="https://open-meteo.com/">
+    <img alt="Open-Meteo" src="https://img.shields.io/badge/Weather-OpenMeteo-1E88E5" />
+  </a>
+</p>
 
-AgriBot Field Advisor is my adapted implementation of an agronomy assistant. It accepts a farmer or field-manager question, optionally with a plant image or location, then selects useful evidence sources before producing a practical, clearly formatted response. The project is intended for research and prototype use; it is not a replacement for field inspection, laboratory testing, or local agronomic advice.
+> AI-powered crop intelligence for farmers, agronomists, and field managers — combining image analysis, weather insights, geospatial diagnostics, and evidence-backed agronomic guidance in one workflow.
 
-## Capabilities
+## Overview
 
-- Classify a JPG or PNG plant image using a configurable deployed vision endpoint.
-- Review current conditions, forecasts, historical weather, soil moisture, wind, and ET0.
-- Compare Sentinel-2 vegetation indices across one or more field periods.
-- Resolve named locations to coordinates for downstream analysis.
-- Retrieve agricultural and scientific references to support an answer.
-- Stream the advisor's progress and final response in a focused Streamlit interface.
+Prithvi Agro Crop Assistant is a research-oriented agricultural decision support system that helps interpret crop stress, field conditions, and management risks using multiple evidence sources. The system can accept a natural language query, a plant image, and optional geolocation details, then orchestrate a multi-step reasoning workflow to provide actionable agronomic advice.
+
+This project is designed for prototype and research use. It is not a substitute for field inspection, laboratory diagnostics, or certified agronomic advice.
+
+---
+
+## Why this project matters
+
+Modern agriculture depends on timely insights from several disconnected sources:
+
+- plant health imagery
+- field-level weather and climate conditions
+- vegetation and soil trend analysis from Earth observation data
+- research documents and agronomic references
+
+Prithvi Agro Crop Assistant unifies these signals into a single intelligent assistant. Instead of forcing a farmer to manually browse separate tools, the assistant reasons across them and returns a clear, context-aware recommendation.
+
+---
+
+## System architecture
+
+```mermaid
+flowchart TD
+    A[Farmer / Agronomist Query] --> B[Streamlit UI]
+    B --> C[LangGraph Planner]
+
+    C --> D[Vision Tool]
+    C --> E[Weather Tool]
+    C --> F[Geospatial Tool]
+    C --> G[Location Resolver]
+    C --> H[Research Search]
+
+    D --> I[Evidence Aggregation]
+    E --> I
+    F --> I
+    G --> I
+    H --> I
+
+    I --> J[Final Agronomic Synthesis]
+    J --> K[Actionable Recommendation]
+```
+
+### Core capabilities
+
+- Plant image classification for crop stress and disease signals
+- Weather analysis for current conditions, forecast risk, and historical trends
+- Satellite-based vegetation monitoring using Sentinel-2-derived indicators
+- Location normalization for field and region-based queries
+- Research-backed answer synthesis using agricultural references and web search
+- Streamed assistant progress and answer generation in a clean UI
+
+---
+
+## Feature highlights
+
+### 🌾 Field-aware intelligence
+The system interprets not just the crop issue in isolation, but also its surrounding conditions: weather, field history, growth stage, and environmental stress signals.
+
+### 🧠 Multi-tool planning
+Rather than relying on a single model call, the assistant plans and executes relevant tools in sequence, then combines the evidence before producing a final answer.
+
+### 📡 Remote sensing and agronomy
+By integrating weather and geospatial analytics, the system can support decisions such as:
+
+- stress detection during abnormal conditions
+- crop vigor comparison across date windows
+- risk evaluation after rainfall, heatwaves, or dry spells
+- seasonal trend interpretation
+
+### 🧪 Research support
+The assistant can retrieve agricultural references and scientific findings to ground its recommendations, making responses more evidence-informed and operationally meaningful.
+
+---
 
 ## Workflow
 
 ```text
-Field question + optional image/location
-              |
-       LangGraph planner
-              |
- vision | weather | satellite | location | research
-              |
-  evidence-aware field guidance
+User question + optional image/location
+                │
+                ▼
+         Agent planning layer
+                │
+   ┌────────────┼────────────┐
+   │            │            │
+   ▼            ▼            ▼
+Vision      Weather     Geospatial
+   │            │            │
+   └───────┬────┼────────────┘
+           │
+           ▼
+    Research + location lookup
+           │
+           ▼
+    Evidence synthesis
+           │
+           ▼
+    Final field recommendation
 ```
 
-The planner retains concise summaries of completed tool calls to reduce duplicate work while preserving detailed results for the final synthesis.
+The system keeps concise summaries of completed tool calls while preserving full trace details for the final answer, improving efficiency and interpretability.
 
-## Project Layout
+---
+
+## Project structure
 
 ```text
 .
-├── main.py                 # Streamlit interface and upload handling
-├── agronomist_agent.py     # UI-facing streaming wrapper
+├── main.py                  # Streamlit web interface and upload handling
+├── agronomist_agent.py      # UI-facing streaming agent wrapper
+├── finetuning-clip.py       # Optional CLIP fine-tuning helper
+├── requirements.txt         # Python dependencies
+├── .gitignore               # Repository ignore rules
+├── README.md                # Project documentation
 ├── agent/
-│   ├── graph.py            # Planner, tools, and response synthesis
-│   ├── prompt.py           # Agent and synthesis guidance
-│   └── state.py            # Shared graph state
+│   ├── __init__.py
+│   ├── graph.py             # LangGraph planner and execution flow
+│   ├── prompt.py            # Agent guidance and response templates
+│   └── state.py             # Shared graph state structures
 ├── tools/
-│   ├── geocoding_tool.py   # Location lookup
-│   ├── geospatial_tool.py  # Sentinel-2 analysis
-│   ├── search_tool.py      # Agricultural and web research
-│   ├── tool_schemas.py     # Input validation
-│   ├── vision_tool.py      # Crop image classification
-│   └── weather_tool.py     # Weather analysis
-├── finetuning-clip.py      # Optional model fine-tuning utility
-└── requirements.txt
+│   ├── __init__.py
+│   ├── geocoding_tool.py    # Location lookup and coordinate resolution
+│   ├── geospatial_tool.py   # Sentinel-2 and vegetation analysis
+│   ├── search_tool.py       # Research and web retrieval logic
+│   ├── tool_schemas.py      # Schema validation for tool inputs
+│   ├── vision_tool.py       # Crop image classification integration
+│   └── weather_tool.py      # Weather analysis and interpretation
+└── .github/
+    └── workflows/
+        └── keep-alive.yml
 ```
 
-## Setup
+---
+
+## Installation
+
+### 1) Create a virtual environment
 
 ```bash
 python -m venv .venv
-# Windows PowerShell
-.\.venv\Scripts\Activate.ps1
-# macOS/Linux
-source .venv/bin/activate
+```
 
+#### Windows PowerShell
+
+```powershell
+.\.venv\Scripts\Activate.ps1
+```
+
+#### macOS / Linux
+
+```bash
+source .venv/bin/activate
+```
+
+### 2) Install dependencies
+
+```bash
 pip install -r requirements.txt
+```
+
+### 3) Run the app
+
+```bash
 streamlit run main.py
 ```
 
-Create a `.env` file in the repository root before starting the app. Keep it out of version control.
+---
+
+## Environment configuration
+
+Create a `.env` file in the project root before running the app.
 
 ```dotenv
-# Required for the LangGraph planner
+# Required for the model orchestration layer
 GROQ_API_KEY=your_groq_key
-# Optional fallback when the primary key is rate limited
-GROQ_API_KEY_BACKUP=your_second_groq_key
+GROQ_API_KEY_BACKUP=your_secondary_groq_key
 GROQ_MODEL=llama-3.3-70b-versatile
 
-# Required by research and location tools when those capabilities are used
+# Research and location tools
 TAVILY_API_KEY=your_tavily_key
 OPENWEATHER_API_KEY=your_openweather_key
 
-# Required for Sentinel-2 analysis
+# Optional geospatial pipeline
 SENTINEL_CLIENT_ID=your_sentinel_client_id
 SENTINEL_CLIENT_SECRET=your_sentinel_client_secret
 
-# Optional vision service settings
+# Optional vision classification service
 VISION_API_URL=https://your-vision-service.example/classify
 VISION_API_TIMEOUT_SECONDS=30
 AGRIBOT_MAX_IMAGE_MB=8
 
-# Optional synthesis fallback
+# Optional fallback synthesis provider
 OPENROUTER_API_KEY=your_openrouter_key
 ```
 
-Open-Meteo is used for the default weather retrieval and does not need a key. Sentinel Hub credentials are only needed when satellite analysis is selected.
+### Notes
 
-## Recent implementation notes
+- Open-Meteo can be used without an API key for weather access.
+- Sentinel Hub credentials are needed only when geospatial analytics are active.
+- Temporary uploads are created under `.streamlit_tmp/` during runtime.
 
-- Uploads are stored with generated filenames to avoid collisions between sessions.
-- Image size and extension are validated both in the UI and before a vision request.
-- The vision request timeout and image-size cap are configurable through environment variables.
-- Search, location, and satellite date inputs reject blank or invalid values earlier in the workflow.
-- Location requests use HTTPS and safely encoded request parameters.
+---
 
 ## Example questions
 
-- “What could be causing these brown spots on my tomato leaves?” (attach an image)
-- “What is the main weather risk for my wheat over the next seven days in Pune?”
-- “Compare field health before and after heavy rain.” (provide coordinates and date ranges)
-- “Find research-backed management options for powdery mildew on grapes.”
+- “What disease could be causing yellowing and spots on my maize leaves?”
+- “Should I worry about moisture stress in my wheat field this week?”
+- “Compare plant vigor before and after heavy rainfall in this field.”
+- “What are the best agronomic interventions for powdery mildew on grapes?”
+- “I uploaded a tomato leaf image — can you help diagnose the issue?”
 
-## Operational notes
+---
 
-- Image classifications are decision support, not a confirmed diagnosis.
-- Satellite analyses depend on cloud-free Sentinel-2 observations and the selected date windows.
-- API responses depend on third-party availability, credentials, and quotas.
-- Temporary uploads are stored in `.streamlit_tmp/`; local caches are ignored by Git.
+## Usage flow
 
-## Attribution
+1. Enter a field or crop question in the chat interface.
+2. Optionally attach a leaf or plant image.
+3. Provide a location or coordinates if relevant.
+4. The agent selects the right tools to gather evidence.
+5. Results are combined into a practical recommendation.
+6. A full execution trace remains available for inspection.
 
-This adapted prototype uses open-source and hosted components including Streamlit, LangGraph, LangChain, Groq, Sentinel Hub, Open-Meteo, Tavily, OpenWeather, and CLIP-based crop-disease classification tooling. Please retain applicable licenses and citations when extending or distributing the project.
+---
+
+## Operational considerations
+
+- Image-based diagnoses are decision-support signals, not definitive diagnoses.
+- Geospatial and weather models depend on available cloud-free observations and API uptime.
+- Recommendations should be validated against on-ground field inspection and agronomic expertise.
+- The prototype is best suited for experimentation, research, and applied prototyping.
+
+---
+
+## Roadmap
+
+- Improve crop disease classification confidence and explainability
+- Add more robust local field history support
+- Extend geospatial analysis to longer time series and anomaly detection
+- Add region-aware advisory templates for major crop types
+- Expand tool integrations for irrigation, soil, and pest alerts
+
+---
+
+## Contributing
+
+Contributions are welcome. If you want to improve the project:
+
+1. Fork the repository
+2. Create a feature branch
+3. Make a focused change
+4. Validate the workflow locally
+5. Submit a pull request with a clear summary
+
+---
 
 ## License
 
-No license has been declared. Add an appropriate license before distributing the project or accepting external contributions.
+No license has been declared in the project yet. Before distributing or contributing externally, add a proper open-source license such as MIT or Apache 2.0.
+
+---
+
+## Attribution
+
+This project builds on open-source and API-driven components including:
+
+- Streamlit
+- LangGraph
+- LangChain
+- Groq
+- Open-Meteo
+- Sentinel Hub
+- Tavily
+- OpenWeather
+- CLIP-based crop image analysis workflows
+
+Please ensure that any reuse or distribution respects the licensing and terms of the upstream services and tools.
+
+<p align="center">
+  <sub>Built for smart agriculture, resilient decision-making, and evidence-driven crop support.</sub>
+</p>
