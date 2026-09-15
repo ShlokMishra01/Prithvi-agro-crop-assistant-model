@@ -25,13 +25,23 @@
 > AI-powered crop intelligence for farmers, agronomists, and field managers — combining image analysis, weather insights, geospatial diagnostics, and evidence-backed agronomic guidance in one workflow.
 
 <p align="center">
-  <a href="C:/Users/MCT/Downloads/Prithvi_Agro_AI_paper.pdf">
-    <img src="https://img.shields.io/badge/📄_Research_Paper-View_PDF-0EA5E9?style=for-the-badge&logo=adobeacrobatreader&logoColor=white" alt="Read the research paper" />
+  <a href="./Prithvi_Agro_AI_paper.pdf">
+    <img src="https://img.shields.io/badge/📄_Research_Paper-Open_Study-0EA5E9?style=for-the-badge&logo=adobeacrobatreader&logoColor=white" alt="Open the research paper" />
   </a>
 </p>
 
+<div align="center">
+
+  <img src="https://img.shields.io/badge/Research_Validated-Professional_Metrics-22C55E?style=flat-square" alt="Research validated" />
+  <img src="https://img.shields.io/badge/Evaluation-Real_Time_Studies-2563EB?style=flat-square" alt="Real-time evaluation" />
+  <img src="https://img.shields.io/badge/Case_Studies-Agricultural_Use_Cases-7C3AED?style=flat-square" alt="Case studies" />
+
+</div>
+
 <p align="center">
-  <strong>This project is grounded in a research-backed agricultural AI study and has been designed around a well-structured, evidence-driven crop intelligence framework.</strong>
+  <strong>
+    This project is built on a professionally evaluated agricultural AI study, backed by real-time assessment workflows, benchmark-driven validation, and field-informed case studies designed to improve crop decision support in practical conditions.
+  </strong>
 </p>
 
 ## Overview
