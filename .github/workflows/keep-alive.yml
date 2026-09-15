@@ -1,0 +1,14 @@
+name: Hugging Face Space Keep-Alive
+
+on:
+  schedule:
+    # Runs every 15 minutes
+    - cron: '*/15 * * * *'
+  workflow_dispatch: # Allows you to run this workflow manually from the Actions tab
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping the Hugging Face Space
+        run: curl -s ${{ secrets.HF_SPACE_URL }} > /dev/null

@@ -1,0 +1,21 @@
+requests
+tavily-python
+python-dotenv
+sentinelhub
+numpy
+
+# Agent stack
+langchain
+langgraph
+langchain-groq
+langchain-openai
+groq
+langsmith
+pydantic
+tenacity
+streamlit
+
+openmeteo-requests
+requests-cache 
+retry-requests
+pandas
