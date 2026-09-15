@@ -1,0 +1,79 @@
+<svg width="1400" height="420" viewBox="0 0 1400 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1400" y2="420" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#071B17"/>
+      <stop offset="0.5" stop-color="#0D2E26"/>
+      <stop offset="1" stop-color="#123C2F"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#1AF0A3" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#7BE7C5" stop-opacity="0.04"/>
+    </linearGradient>
+    <linearGradient id="leaf" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#9EF7B5"/>
+      <stop offset="1" stop-color="#1FAE76"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#B9FFD9"/>
+      <stop offset="0.5" stop-color="#86F7AE"/>
+      <stop offset="1" stop-color="#43D39E"/>
+    </linearGradient>
+    <filter id="blur" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="30"/>
+    </filter>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="15" stdDeviation="20" flood-color="#000000" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <rect width="1400" height="420" rx="28" fill="url(#bg)"/>
+
+  <!-- background glow -->
+  <circle cx="1180" cy="80" r="180" fill="#1AF0A3" opacity="0.14" filter="url(#blur)"/>
+  <circle cx="260" cy="350" r="180" fill="#DCFCA8" opacity="0.08" filter="url(#blur)"/>
+
+  <!-- geometric pattern -->
+  <g opacity="0.18">
+    <path d="M60 340C220 240 320 230 460 320" stroke="#7CE7BF" stroke-width="2"/>
+    <path d="M580 330C760 230 860 220 1030 300" stroke="#7CE7BF" stroke-width="2"/>
+    <path d="M1000 120C1120 190 1220 230 1340 220" stroke="#7CE7BF" stroke-width="2"/>
+  </g>
+
+  <!-- card blocks -->
+  <g filter="url(#soft)">
+    <rect x="760" y="72" width="520" height="250" rx="26" fill="url(#card)" stroke="rgba(167,255,208,0.25)"/>
+    <rect x="788" y="102" width="165" height="90" rx="16" fill="#0B1F1A" stroke="#63E3B0" stroke-opacity="0.4"/>
+    <rect x="966" y="102" width="274" height="26" rx="13" fill="#12382D"/>
+    <rect x="966" y="142" width="210" height="16" rx="8" fill="#12382D"/>
+    <rect x="966" y="172" width="240" height="16" rx="8" fill="#12382D"/>
+    <rect x="788" y="214" width="452" height="60" rx="18" fill="#0B1F1A" stroke="#63E3B0" stroke-opacity="0.45"/>
+    <rect x="812" y="232" width="150" height="12" rx="6" fill="#6EF2AF" opacity="0.9"/>
+    <rect x="980" y="232" width="180" height="12" rx="6" fill="#C9F8E0" opacity="0.85"/>
+    <rect x="812" y="252" width="104" height="10" rx="5" fill="#A7F2C8" opacity="0.65"/>
+  </g>
+
+  <!-- leaf graphic -->
+  <g transform="translate(80 40)" filter="url(#soft)">
+    <circle cx="190" cy="190" r="130" fill="#123B32" opacity="0.9"/>
+    <path d="M190 70C267 125 289 203 251 278C221 235 182 196 119 157C143 112 162 88 190 70Z" fill="url(#leaf)"/>
+    <path d="M190 86C214 146 216 209 178 267C155 218 150 180 149 136C160 116 174 98 190 86Z" fill="#D7FFE7" opacity="0.9"/>
+    <path d="M188 71V268" stroke="#E1FFF4" stroke-width="8" stroke-linecap="round"/>
+    <path d="M188 281C170 230 138 197 90 178" stroke="#A8F7C9" stroke-width="7" stroke-linecap="round"/>
+    <path d="M188 281C230 246 261 204 279 152" stroke="#A8F7C9" stroke-width="7" stroke-linecap="round"/>
+  </g>
+
+  <!-- text area -->
+  <g>
+    <text x="490" y="170" fill="#EAFBF3" font-family="Segoe UI, Arial, sans-serif" font-size="40" font-weight="700" letter-spacing="1.5">PRITHVI AGRO</text>
+    <text x="490" y="222" fill="#A8F7C9" font-family="Segoe UI, Arial, sans-serif" font-size="74" font-weight="800" letter-spacing="-2">Crop Assistant</text>
+    <text x="492" y="270" fill="#D7FCEB" opacity="0.9" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="500">AI-powered agronomy intelligence for smarter field decisions</text>
+    <g transform="translate(492 300)">
+      <rect x="0" y="0" width="166" height="42" rx="21" fill="url(#accent)"/>
+      <text x="83" y="28" fill="#062D23" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700" text-anchor="middle">Live Insights</text>
+    </g>
+    <g transform="translate(680 300)">
+      <rect x="0" y="0" width="170" height="42" rx="21" fill="#0F2E29" stroke="#7AE4B5" stroke-opacity="0.7"/>
+      <text x="85" y="28" fill="#DBFFF0" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700" text-anchor="middle">Field Ready</text>
+    </g>
+  </g>
+</svg>

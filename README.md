@@ -1,7 +1,7 @@
 # 🌱 Prithvi Agro Crop Assistant
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ShlokMishra01/Prithvi-agro-crop-assistant-model/main/.github/assets/hero-banner.png" alt="AgriBot banner" width="1200" />
+  <img src="https://raw.githubusercontent.com/ShlokMishra01/Prithvi-agro-crop-assistant-model/main/.github/assets/hero-banner.svg" alt="Prithvi Agro Crop Assistant banner" width="1200" />
 </p>
 
 <p align="center">
