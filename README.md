@@ -1,10 +1,6 @@
 # 🌱 Prithvi Agro Crop Assistant
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ShlokMishra01/Prithvi-agro-crop-assistant-model/main/.github/assets/hero-banner.svg" alt="Prithvi Agro Crop Assistant banner" width="1200" />
-</p>
-
-<p align="center">
   <a href="https://www.python.org/">
     <img alt="Python 3.10+" src="https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white" />
   </a>
@@ -40,13 +36,13 @@
 
 <p align="center">
   <strong>
-    This project is built on a professionally evaluated agricultural AI study, backed by real-time assessment workflows, benchmark-driven validation, and field-informed case studies designed to improve crop decision support in practical conditions.
+    This project is built on a professionally evaluated agricultural AI study, backed by real-time assessment workflows, benchmark-driven validation, and field-informed case studies designed to inform robust crop decision support.
   </strong>
 </p>
 
 ## Overview
 
-Prithvi Agro Crop Assistant is a research-oriented agricultural decision support system that helps interpret crop stress, field conditions, and management risks using multiple evidence sources. The system can accept a natural language query, a plant image, and optional geolocation details, then orchestrate a multi-step reasoning workflow to provide actionable agronomic advice.
+Prithvi Agro Crop Assistant is a research-oriented agricultural decision support system that helps interpret crop stress, field conditions, and management risks using multiple evidence sources. This system combines crop image interpretation, weather context, geospatial indicators, and retrieval of relevant agronomic references to support real-world advisory decisions.
 
 This project is designed for prototype and research use. It is not a substitute for field inspection, laboratory diagnostics, or certified agronomic advice.
 
@@ -61,7 +57,7 @@ Modern agriculture depends on timely insights from several disconnected sources:
 - vegetation and soil trend analysis from Earth observation data
 - research documents and agronomic references
 
-Prithvi Agro Crop Assistant unifies these signals into a single intelligent assistant. Instead of forcing a farmer to manually browse separate tools, the assistant reasons across them and returns a clear, context-aware recommendation.
+Prithvi Agro Crop Assistant unifies these signals into a single intelligent assistant. Instead of forcing a farmer to manually browse separate tools, the assistant reasons across them and returns a useful synthesis grounded in observed conditions and available evidence.
 
 ---
 
